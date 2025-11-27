@@ -33,4 +33,8 @@ Our main objective is to design and build an AI-based smart bin that can detect 
 
 The smart waste sorting system uses an ESP32-CAM with an HC-SR04 ultrasonic sensor to detect objects at 4-25 cm. Upon trigger, the OV2640 camera captures VGA JPEG frames, encodes them to base64 MIME-prefixed strings, and POSTs as JSON to a Flask server via WiFi. The Python 3 server employs TensorFlow/Keras and OpenCV to detect and return class and confidence of the captured image.
 
+<img src="images/esp32_cam_bb.jpg" height="300" />
+
 On the ESP32-CAM, sends the class via ESP-NOW. The receiver ESP32 (WiFi STA + ESP-NOW) handles data in OnDataRecv, mapping to two servo motors physically tilts/rotates the bin to drop the item into the correct compartment.. It displays on LCD, monitors bins with three HC-SR04 and show the bin fill level as a percentage, also provides a web based dashboard for monitoring and manual control.
+
+<img src="images/esp32_controller_bb.jpg" width="600" /> 
